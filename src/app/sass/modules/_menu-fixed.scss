@@ -1,0 +1,120 @@
+menu.menu {
+    position: relative;
+    display: block;
+    width: 100%;
+
+    nav {
+        position: relative;
+        display: block;
+        width: 100%;
+        background-color: #666;
+        z-index: 2;
+
+        ul {
+            padding: 20px;
+            max-width: 1340px;
+            width: 100%;
+            margin: 0 auto;
+
+            li {
+                display: inline-block;
+                color: $black;
+                margin-right: 20px;
+
+                &:last-of-type { margin-right: 0; }
+
+                a {
+                    color: white;
+
+                    @include transition(color .3s ease);
+
+                    &:hover { color: $blue; text-decoration: none; }
+                }
+            }
+        }
+
+        &.top {
+            &.fixed-down {
+                position: fixed;
+                top: 0;
+
+                &.animation {
+                    @include opacity(0);
+                    @include translateY(-100%);
+                }
+
+                &.active {
+                    @include transition(transform .3s ease, opacity .3s ease);
+                    @include translateY(0%);
+                    @include opacity(1);
+                }
+            }
+
+            &.fixed-up {
+                position: fixed;
+                top: -100%;
+                
+                @include opacity(0);
+                @include translateY(-100%);
+
+                &.active {
+                    top: 0;
+
+                    @include transition(transform .3s ease, opacity .3s ease);
+                    @include translateY(0%);
+                    @include opacity(1);
+                }
+
+                &.in-active {
+                    top: 0;
+
+                    @include transition(transform .3s ease, opacity .3s ease);
+                    @include translateY(-100%);
+                    @include opacity(0);
+                }
+            }
+        }
+
+        &.bottom {
+            &.fixed-down {
+                position: fixed;
+                bottom: 0;
+
+                &.animation {
+                    @include opacity(0);
+                    @include translateY(100%);
+                }
+
+                &.active {
+                    @include transition(transform .3s ease, opacity .3s ease);
+                    @include translateY(0%);
+                    @include opacity(1);
+                }
+            }
+
+            &.fixed-up {
+                position: fixed;
+                bottom: -100%;
+                
+                @include opacity(0);
+                @include translateY(100%);
+
+                &.active {
+                    bottom: 0;
+
+                    @include transition(transform .3s ease, opacity .3s ease);
+                    @include translateY(0%);
+                    @include opacity(1);
+                }
+
+                &.in-active {
+                    bottom: 0;
+
+                    @include transition(transform .3s ease, opacity .3s ease);
+                    @include opacity(0);
+                    @include translateY(100%);
+                }
+            }
+        }
+    }
+}
