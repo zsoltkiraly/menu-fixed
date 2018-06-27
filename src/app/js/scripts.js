@@ -12,13 +12,13 @@ var fixMenu = function() {
     }
 
     function fixingScrollDown(c, m) {
+
+        var menuHeight = m.offsetHeight,
+            menuTop = m.getBoundingClientRect().top,
+            fixMenu = m.querySelector('nav'),
+            menuBottom = menuHeight + menuTop;
+
         if (window.matchMedia('(min-width: ' + c.minWidthOperatingRange + 'px)').matches) {
-
-            var menuHeight = m.offsetHeight,
-                menuTop = m.getBoundingClientRect().top,
-                fixMenu = m.querySelector('nav'),
-                menuBottom = menuHeight + menuTop;
-
             if(c.position == 'bottom') {
                 menuTop = menuBottom;
                 menuBottom = menuTop;
@@ -74,6 +74,10 @@ var fixMenu = function() {
                     fixMenu.classList.remove('fixed-up', 'active', 'in-active');
                 }
             }
+
+        } else {
+            fixMenu.className = '';
+            fixMenu.classList.add(c.position);
         }
     }
 
