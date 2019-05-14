@@ -3,7 +3,31 @@ Menu fixed - Code by Zsolt Király
 v1.0.5 - 2018-04-19
 */
 
+'use strict';
 var fixMenu = function() {
+
+    function signatura() {
+        if (window['console']) {
+            const text = {
+                black: '%c     ',
+                blue: '%c   ',
+                author: '%c  Zsolt Király  ',
+                github: '%c  https://zsoltkiraly.com/'
+            }
+    
+            const style = {
+                black: 'background: #282c34',
+                blue: 'background: #61dafb',
+                author: 'background: black; color: white',
+                github: ''
+            }
+    
+            console.log(text.black + text.blue + text.author + text.github, style.black, style.blue, style.author, style.github);
+        }
+    }
+    
+    signatura();
+
     var scrollPos = 0;
 
     function setMenuHeight(c, m) {

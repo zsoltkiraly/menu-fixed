@@ -6,10 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta charset="utf-8">
 
-    <link rel="stylesheet" href="css/demo.css">
+    <link rel="shortcut icon" href="#" />
     <link rel="stylesheet" href="css/main.css">
-
-    <script src="js/scripts.js"></script>
+    <script src="js/scripts.min.js"></script>
 </head>
 
 <body>
@@ -90,18 +89,16 @@
 
     <script>
         window.addEventListener('load', function() {
-            fixMenu.app(
-                config = {
-                    boxContainer: 'menu',
-                    fixed: 'scroll-down', //scroll-down, scroll-up
-                    position: 'top', //top, bottom
-                    minWidthOperatingRange: 480,
-                    scrollAnimation: {
-                        switch: true, //true, false
-                        turnOnDistance: 100 // min. 100
-                    },
+            fixMenu.app({
+                boxContainer: 'menu',
+                fixed: 'scroll-up', //scroll-down, scroll-up
+                position: 'top', //top, bottom
+                minWidthOperatingRange: 480,
+                scrollAnimation: {
+                    switch: true, //true, false
+                    turnOnDistance: 100 // min. 100
                 }
-            );
+            });
         }, false);
     </script>
 
